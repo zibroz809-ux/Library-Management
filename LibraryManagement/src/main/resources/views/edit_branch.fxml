@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.library.controllers.EditBranchController"
+      spacing="10"
+      style="-fx-padding: 20;">
+
+    <Label text="Edit Branch" style="-fx-font-size: 20px;" />
+
+    <TextField fx:id="txtId" promptText="Branch ID"/>
+    <TextField fx:id="txtName" promptText="Branch Name"/>
+    <TextField fx:id="txtAddress" promptText="Branch Address"/>
+
+    <Button text="Save Changes" fx:id="btnSave" style="-fx-padding: 10;" />
+</VBox>

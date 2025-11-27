@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.library.controllers.BookController"
+            styleClass="root-pane">
+
+    <!-- HEADER -->
+    <top>
+        <VBox spacing="10" styleClass="header-panel">
+            <Label text="📕 Manage Books" styleClass="header-title"/>
+            <Label fx:id="labelStats" text="Total Books: 0"
+                   style="-fx-text-fill: #E0E0E0; -fx-font-size: 12px;" />
+        </VBox>
+    </top>
+
+    <!-- CONTENT -->
+    <center>
+        <VBox spacing="10" style="-fx-padding: 10;">
+            
+            <!-- SEARCH BAR -->
+            <HBox spacing="10" styleClass="search-bar">
+                <Label text="🔍 Search:" style="-fx-font-weight: bold;" />
+                <TextField fx:id="searchField" promptText="Search by title, author, or publisher..." prefWidth="300" />
+                <Button fx:id="btnClear" text="Clear" styleClass="btn-secondary,btn-small" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="labelShowingResults" text="Showing all books" 
+                       style="-fx-font-size: 10; -fx-text-fill: #666;" />
+            </HBox>
+
+            <!-- TABLE -->
+            <TableView fx:id="tableBooks" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colTitle" text="Book Title" prefWidth="200"/>
+                    <TableColumn fx:id="colPublisher" text="Publisher" prefWidth="150"/>
+                    <TableColumn fx:id="colAuthors" text="Authors" prefWidth="250"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <!-- FOOTER / ACTIONS -->
+    <bottom>
+        <HBox spacing="10" style="-fx-padding: 15; -fx-background-color: white; -fx-border-color: #ddd; -fx-border-width: 1 0 0 0;">
+            <Button text="➕ Add Book" fx:id="btnAdd" 
+                    styleClass="btn-success" onAction="#openAddForm"/>
+            <Button text="✏️ Edit Book" fx:id="btnEdit" 
+                    styleClass="btn-primary" onAction="#openEditForm"/>
+            <Button text="🗑️ Delete Book" fx:id="btnDelete" 
+                    styleClass="btn-danger" onAction="#deleteBook"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="labelLastAction" text="" 
+                   style="-fx-font-size: 10; -fx-text-fill: #666;" />
+        </HBox>
+    </bottom>
+
+</BorderPane>

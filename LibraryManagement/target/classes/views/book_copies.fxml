@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.library.controllers.BookCopyController">
+
+    <top>
+        <Label text="Manage Book Copies" style="-fx-font-size: 22px; -fx-padding: 10;" />
+    </top>
+
+    <center>
+        <TableView fx:id="tableCopies">
+            <columns>
+                <TableColumn fx:id="colBookId" text="Book ID" prefWidth="100"/>
+                <TableColumn fx:id="colBranchId" text="Branch ID" prefWidth="100"/>
+                <TableColumn fx:id="colCopies" text="Copies" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" style="-fx-padding: 10;">
+            <Button text="Add" fx:id="btnAdd"/>
+            <Button text="Edit" fx:id="btnEdit"/>
+            <Button text="Delete" fx:id="btnDelete"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

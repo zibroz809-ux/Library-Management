@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" 
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.library.controllers.AddBookController"
+      spacing="10"
+      style="-fx-padding: 20;">
+
+    <Label text="Add New Book" style="-fx-font-size: 20px;" />
+
+    <TextField fx:id="txtId" promptText="Book ID"/>
+    <TextField fx:id="txtTitle" promptText="Book Title"/>
+    <TextField fx:id="txtPublisher" promptText="Publisher"/>
+    <TextField fx:id="txtAuthors" promptText="Authors (comma separated)"/>
+
+    <Button text="Save Book" fx:id="btnSave" style="-fx-padding: 10;" />
+
+</VBox>
